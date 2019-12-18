@@ -33,8 +33,12 @@ class Alarm(object):
 
 class WhatsApp():
     def __init__(self,):
-        self.SID = 'AC7b9834684161ec5cc333fcb4ca7037fb'
-        self.AUTH = 'cf063fe28994876cd960f55c916be110'
+        print(os.getcwd()+'credentials.txt')
+        cred = csv.reader(open(os.getcwd()+'/credentials.txt',newline=''),delimiter=' ',quotechar='|')
+        for value in cred:
+            self.SID,self.AUTH = value[0].split(',')[0],value[0].split(',')[1],    
+        
+
         self.client = Client(self.SID,self.AUTH)
         self.from_whatsapp = 'whatsapp:+14155238886'
 
