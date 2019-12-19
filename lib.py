@@ -24,7 +24,7 @@ import csv
 import os
 from twilio.rest import Client
 import time
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 class Alarm(object):
     """docstring for Alarm"""
@@ -33,6 +33,7 @@ class Alarm(object):
         
 
     def callback(self):
+        print("Callback ran!!")
         wp = WhatsApp()
         wp.send_from_csv()   
         
@@ -55,7 +56,7 @@ class Alarm(object):
 
 class WhatsApp():
     def __init__(self,):
-        print(os.getcwd()+'credentials.txt')
+        print(os.getcwd()+'/credentials.txt')
         cred = csv.reader(open(os.getcwd()+'/credentials.txt',newline=''),delimiter=' ',quotechar='|')
         for value in cred:
             self.SID,self.AUTH = value[0].split(',')[0],value[0].split(',')[1],    
