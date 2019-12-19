@@ -39,7 +39,7 @@ class Alarm(object):
     def setup_rising(self,bouncetime):
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.pin,GPIO.IN)
-        GPIO.add_event_detect(pin, GPIO.RISING, callback=self.callback, bouncetime=bouncetime)
+        GPIO.add_event_detect(self.pin, GPIO.RISING, callback=self.callback, bouncetime=bouncetime)
 
     def wait(self):
         try:
