@@ -24,7 +24,7 @@ import csv
 import os
 from twilio.rest import Client
 import time
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 class Alarm(object):
     """docstring for Alarm"""
