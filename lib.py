@@ -49,7 +49,7 @@ class Alarm(object):
             pass
         finally:
             print("\nRelease the used pin(s)")
-            GPIO.cleanup([Input_Sig])
+            GPIO.cleanup([self.pin])
     
 
 class WhatsApp():
