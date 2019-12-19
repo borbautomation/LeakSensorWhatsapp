@@ -37,6 +37,7 @@ class Alarm(object):
         wp.send_from_csv()   
         
     def setup_rising(self,bouncetime):
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.pin,GPIO.IN)
         GPIO.add_event_detect(pin, GPIO.RISING, callback=self.callback, bouncetime=bouncetime)
 
